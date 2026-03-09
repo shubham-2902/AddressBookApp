@@ -6,12 +6,10 @@ import java.util.Scanner;
 import com.example.demo.model.Contact;
 
 public class AddressBook {
-
-    private ArrayList<Contact> contactList = new ArrayList<>();
-    private Scanner sc = new Scanner(System.in);
+    ArrayList<Contact> contactList = new ArrayList<>();
+    Scanner sc = new Scanner(System.in);
 
     public void addContact() {
-
         System.out.println("Enter First Name:");
         String firstName = sc.nextLine();
 
@@ -44,14 +42,11 @@ public class AddressBook {
     }
 
     public void editContact() {
-
         System.out.println("Enter the First Name of the contact to edit:");
         String name = sc.nextLine();
 
         for (Contact contact : contactList) {
-
-            if (contact.getFirstName() != null &&
-                    name.equalsIgnoreCase(contact.getFirstName())) {
+            if (contact.getFirstName().equalsIgnoreCase(name)) {
 
                 System.out.println("Enter new Address:");
                 contact.setAddress(sc.nextLine());
@@ -72,6 +67,24 @@ public class AddressBook {
                 contact.setEmail(sc.nextLine());
 
                 System.out.println("Contact updated successfully!");
+                return;
+            }
+        }
+        System.out.println("Contact not found.");
+    }
+
+    public void deleteContact() {
+
+        System.out.println("Enter the First Name of the contact to delete:");
+        String name = sc.nextLine();
+
+        for (int i = 0; i < contactList.size(); i++) {
+
+            if (contactList.get(i).getFirstName().equalsIgnoreCase(name)) {
+
+                contactList.remove(i);
+
+                System.out.println("Contact deleted successfully!");
                 return;
             }
         }
