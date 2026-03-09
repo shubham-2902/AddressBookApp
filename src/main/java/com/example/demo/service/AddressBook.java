@@ -107,4 +107,13 @@ public class AddressBook {
             System.out.println(contact);
         }
     }
+
+    public ArrayList<Contact> getContacts() {
+        return contactList;
+    }
 }
+
+
+
+
+
