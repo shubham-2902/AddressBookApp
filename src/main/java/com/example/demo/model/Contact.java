@@ -7,8 +7,14 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class Contact {
-    private String firstName;
+    public Contact(String firstName2, String lastName2, String address2, String city2, String state2, String zip2,
+			String phoneNumber2, String email2) {
+		// TODO Auto-generated constructor stub
+	}
+    
+	private String firstName;
     private String lastName;
     private String address;
     private String city;
@@ -17,4 +23,6 @@ public class Contact {
     private String phoneNumber;
     private String email;
 }
+
+
 
